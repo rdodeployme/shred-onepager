@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHRED — Industrial Shredding &amp; Material Processing | A Recycle Group brand</title>
+<meta name="description" content="SHRED assesses, trials and processes defective product, manufacturing waste and difficult material streams that standard recycling services will not take.">
+<style>
+:root{
+  --paper:#F2F0EA;
+  --panel:#FAF9F5;
+  --panel-2:#EAE7DF;
+  --ink:#111111;
+  --mid:#55524C;
+  --faint:#8B877E;
+  --line:#D3CFC4;
+  --line-dark:#111111;
+  --green:#00A800;
+  --green-bright:#00ED00;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--green-bright);color:#000}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--green);outline-offset:3px}
+
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.02;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,5.4vw,4.4rem);letter-spacing:-.035em}
+h2{font-size:clamp(1.7rem,3.4vw,2.7rem);letter-spacing:-.03em}
+h3{font-size:1.05rem}
+p{color:var(--mid);max-width:64ch}
+.hl{color:var(--ink);font-weight:600}
+.knock{display:inline-block;background:var(--green-bright);color:#000;padding:.02em .14em .06em}
+
+.tbc{color:var(--ink);font-weight:700;border-bottom:2px dotted var(--green);cursor:help}
+
+.mono{font-family:var(--mono)}
+.lbl{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.kick{font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.kick::before{content:"";width:22px;height:2px;background:var(--green)}
+
+/* ---------- document header ---------- */
+.docbar{border-bottom:2px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:50}
+.docbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:66px}
+.brand{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:var(--ink)}
+.logo{font-size:1.45rem;font-weight:900;letter-spacing:-.06em;text-transform:uppercase;line-height:1}
+.logo span{color:var(--green)}
+.endorse{font-family:var(--mono);font-size:.54rem;letter-spacing:.14em;color:var(--faint);
+  text-transform:uppercase;border-left:1px solid var(--line);padding-left:11px;line-height:1.4}
+.docmeta{display:flex;gap:26px;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--faint)}
+.docmeta b{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.7rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;padding:14px 22px;text-decoration:none;cursor:pointer;
+  transition:background .18s,color .18s,gap .18s}
+.btn:hover{gap:15px}
+.btn-ink{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.btn-ink:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero: modest, document-like ---------- */
+.hero{padding:84px 0 0;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end;padding-bottom:64px}
+.hero .lead{font-size:1.08rem;color:var(--mid)}
+.hero .lead .hl{font-weight:600}
+.hero-note{margin-top:26px;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;line-height:1.9}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* key figures rail */
+.figs{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+.figs div{padding:24px 26px 26px;border-right:1px solid var(--line)}
+.figs div:first-child{padding-left:0}
+.figs div:last-child{border-right:0}
+.figs .n{font-size:1.45rem;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.figs .l{font-family:var(--mono);font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-top:8px;line-height:1.6}
+
+/* ---------- sections ---------- */
+.sec{padding:96px 0}
+.head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px 56px;align-items:end;margin-bottom:54px}
+.head .kick{grid-column:1/-1}
+.head p{font-size:.98rem}
+
+/* ---------- capability table (the hero of the page) ---------- */
+.tablewrap{border:1px solid var(--ink);background:var(--panel);overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:900px;table-layout:fixed}
+col.c1{width:23%}col.c2{width:26%}col.c3{width:37%}col.c4{width:14%}
+thead th{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);
+  background:var(--ink);text-align:left;padding:16px 20px;font-weight:600}
+tbody td{padding:20px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.92rem;color:var(--mid);font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#F4F2EB}
+td.mat{color:var(--ink);font-weight:700;text-transform:uppercase;font-size:.9rem;letter-spacing:-.01em}
+td.method{font-family:var(--mono);font-size:.74rem;color:var(--ink);line-height:1.75}
+.pill{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 10px;border:1px solid var(--line);color:var(--faint)}
+.pill.live{border-color:var(--green);color:var(--green)}
+.pill.trial{border-color:var(--ink);color:var(--ink)}
+.tnote{margin-top:18px;font-size:.88rem;color:var(--faint);max-width:none}
+
+/* ---------- diagrams ---------- */
+.figures{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.fig{border:1px solid var(--line);background:var(--panel);padding:24px 22px 16px;margin:0}
+.fig figcaption{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+.fig svg{width:100%;height:auto;display:block}
+.figwide{grid-column:1/-1}
+
+/* ---------- risk ledger ---------- */
+.risk{border-top:1px solid var(--line)}
+.risk article{display:grid;grid-template-columns:110px minmax(0,4fr) minmax(0,7fr);gap:16px 40px;
+  padding:30px 0 32px;border-bottom:1px solid var(--line);align-items:start}
+.risk .num{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;color:var(--green);padding-top:6px}
+.risk h3{font-size:clamp(1.15rem,1.8vw,1.45rem)}
+.risk p{font-size:.95rem;max-width:56ch}
+
+/* ---------- custody: THE dark band ---------- */
+.custody{background:#0A0A0A;color:#F4F4F4;padding:110px 0}
+.custody .kick{color:#fff}
+.custody h2{color:#fff}
+.custody>.wrap>.head p{color:#9B9B9B}
+.wedge{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid #2A2A2A}
+.wedge .l{padding:48px 44px;background:#101010}
+.wedge .r{padding:48px 44px;background:#0A0A0A;border-left:1px solid #2A2A2A}
+.wedge h3{color:#fff;margin-bottom:22px}
+.wedge p{color:#9B9B9B}
+.chain{list-style:none;counter-reset:c}
+.chain li{counter-increment:c;padding:18px 0 18px 52px;border-bottom:1px solid #232323;position:relative;font-size:.94rem;color:#9B9B9B}
+.chain li:last-child{border-bottom:0}
+.chain li::before{content:"0" counter(c);position:absolute;left:0;top:18px;font-family:var(--mono);font-size:.7rem;color:var(--green-bright);letter-spacing:.1em}
+.chain b{color:#fff;display:block;font-size:.98rem;margin-bottom:4px;font-weight:700}
+.dpill{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 10px;border:1px solid #3A3A3A;color:#8C8C8C;margin:0 6px 8px 0}
+.custody .tbc{color:#fff;border-bottom-color:var(--green-bright)}
+.custody .hl{color:#fff}
+
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);background:var(--panel)}
+.proc article{padding:30px 24px 34px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.proc article:last-child{border-right:0}
+.proc .step{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;color:var(--green);margin-bottom:18px;font-weight:600}
+.proc h3{font-size:.95rem;margin-bottom:10px}
+.proc p{font-size:.86rem;flex:1}
+.proc .time{margin-top:18px;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);border-top:1px solid var(--line);padding-top:12px}
+
+/* ---------- who ---------- */
+.who{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.who article{padding:30px 28px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s}
+.who article:hover{background:var(--panel)}
+.who .role{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.who h3{margin-bottom:10px;font-size:1.02rem}
+.who p{font-size:.92rem}
+
+/* ---------- cases ---------- */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.case{border:1px solid var(--line);background:var(--panel)}
+.case .top{padding:13px 24px;border-bottom:1px solid var(--line);font-family:var(--mono);
+  font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}
+.case .body{padding:26px 24px 28px}
+.case .q{color:var(--ink);font-weight:600;font-size:1rem;margin-bottom:14px;max-width:none}
+.case .a{font-size:.92rem}
+.case .a strong{color:var(--ink);font-weight:700}
+
+/* ---------- group ---------- */
+.group{border:1px solid var(--ink);background:var(--panel);padding:56px 48px}
+.grouprow{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.glist{list-style:none;counter-reset:g}
+.glist li{counter-increment:g;padding:16px 0 16px 48px;border-bottom:1px solid var(--line);position:relative;font-size:.94rem;color:var(--mid)}
+.glist li:last-child{border-bottom:0}
+.glist li::before{content:"0" counter(g);position:absolute;left:0;top:16px;font-family:var(--mono);font-size:.68rem;color:var(--green);letter-spacing:.1em}
+.glist b{color:var(--ink);display:block;font-size:.98rem;margin-bottom:3px;font-weight:700}
+
+/* ---------- cta ---------- */
+.cta{padding:100px 0 110px;border-top:1px solid var(--line);background:var(--panel-2)}
+.ctagrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+form{border:1px solid var(--ink);background:var(--panel);padding:34px 32px 36px}
+.f{margin-bottom:18px}
+label{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+input,select,textarea{width:100%;background:#fff;border:1px solid var(--line);color:var(--ink);
+  padding:13px 14px;font-family:var(--sans);font-size:.95rem;outline:none;transition:border-color .18s}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+textarea{resize:vertical;min-height:104px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fnote{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;color:var(--faint);margin-top:16px;line-height:1.8}
+form .btn{width:100%;justify-content:center;margin-top:6px}
+.quote-rail{border-left:2px solid var(--green);padding-left:20px;margin-top:32px}
+.quote-rail p{font-size:.93rem}
+
+/* ---------- footer ---------- */
+footer{padding:44px 0 52px;border-top:2px solid var(--ink)}
+.frow{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.fine{font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;color:var(--faint);line-height:1.9;max-width:72ch}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .45s ease-out,transform .45s ease-out}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:960px){
+  .who{grid-template-columns:1fr 1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .proc article{border-bottom:1px solid var(--line)}
+}
+@media(max-width:860px){
+  .docmeta{display:none}
+  .hero{padding:56px 0 0}
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding-bottom:44px}
+  .figs{grid-template-columns:1fr 1fr}
+  .figs div{padding:18px 18px 20px}
+  .figs div:first-child{padding-left:18px}
+  .figs div:nth-child(2n){border-right:0}
+  .figs div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .sec{padding:64px 0}
+  .head{grid-template-columns:1fr;gap:16px;margin-bottom:38px}
+  .risk article{grid-template-columns:1fr;gap:8px;padding:24px 0 26px}
+  .risk .num{padding-top:0}
+  .custody{padding:72px 0}
+  .wedge{grid-template-columns:1fr}
+  .wedge .r{border-left:0;border-top:1px solid #2A2A2A}
+  .wedge .l,.wedge .r{padding:36px 26px}
+  .cases,.figures{grid-template-columns:1fr}
+  .figwide{overflow-x:auto}
+  .figwide svg{min-width:820px}
+  .grouprow{grid-template-columns:1fr;gap:30px}
+  .group{padding:36px 26px}
+  .ctagrid{grid-template-columns:1fr;gap:40px}
+  .f2{grid-template-columns:1fr}
+  .btns .btn{width:100%;justify-content:center}
+  .endorse{display:none}
+}
+@media(max-width:560px){
+  .who{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr}
+}
+</style>
+
+<style id="diagram-anim">
+.fig svg .nd{
+  opacity:clamp(0,(var(--p,1) - var(--a,0))/max(0.001,(var(--b,1) - var(--a,0))),1);
+}
+.fig svg .w{
+  stroke-dasharray:1;
+  stroke-dashoffset:clamp(0,1 - (var(--p,1) - var(--a,0))/max(0.001,(var(--b,1) - var(--a,0))),1);
+}
+.fig svg .fl{
+  stroke-dasharray:.018 .075;
+  animation:figflow 1.4s linear infinite;
+  opacity:clamp(0,(var(--p,1) - .9)/.1,1);
+}
+@keyframes figflow{to{stroke-dashoffset:-.093}}
+@media (prefers-reduced-motion:reduce){
+  .fig svg .nd{opacity:1}
+  .fig svg .w{stroke-dashoffset:0}
+  .fig svg .fl{animation:none;opacity:0}
+}
+</style>
+</head>
+<body>
+
+<header class="docbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="logo">SHR<span>E</span>D</span>
+      <span class="endorse">A RECYCLE GROUP<br>BRAND</span>
+    </a>
+    <div class="docmeta">
+      <span><b>DOC</b> CAPABILITY STATEMENT</span>
+      <span><b>SCOPE</b> INDUSTRIAL SHREDDING &amp; PROCESSING</span>
+      <span><b>REGION</b> VIC · QLD <span class="tbc" title="Confirm operating regions before publishing.">[confirm]</span></span>
+    </div>
+    <a href="#submit" class="btn btn-ink">Submit material</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kick">Industrial shredding &amp; material processing</div>
+        <h1>Some material has no <span class="knock">pathway.</span> We build one.</h1>
+      </div>
+      <div>
+        <p class="lead">SHRED takes on the material other operators decline: <span class="hl">defective product,
+        factory offcuts, obsolete stock, mixed loads nobody wants to quote.</span> We look at what it's made of,
+        run a trial if it needs one, and give you a straight answer on whether a workable process exists.</p>
+        <div class="btns">
+          <a href="#submit" class="btn btn-ink">Submit a material challenge →</a>
+          <a href="#capability" class="btn btn-ghost">Processing capability</a>
+        </div>
+        <div class="hero-note">Every material is assessed before acceptance.<br>No asbestos. No hazardous waste.</div>
+      </div>
+    </div>
+    <div class="figs">
+      <div>
+        <div class="n"><span class="tbc" title="PLACEHOLDER — draft figure only. Replace with the verified annual tonnage before publishing.">12,400 t</span></div>
+        <div class="l">Material processed annually across Recycle Group</div>
+      </div>
+      <div>
+        <div class="n"><span class="tbc" title="Sourced from The Mattress Recycling Company public site list: Geelong, Ararat, Brisbane (Moorooka), Gold Coast (Burleigh Heads), Sunshine Coast (Buderim). Confirm which sites can run SHRED projects before publishing.">5</span></div>
+        <div class="l">Processing sites, Vic &amp; Qld</div>
+      </div>
+      <div>
+        <div class="n"><span class="tbc" title="PROPOSED, not confirmed: a 2-business-day first response is a decision for the team. Adjust before publishing.">2 days</span></div>
+        <div class="l">Initial assessment response</div>
+      </div>
+      <div>
+        <div class="n"><span class="tbc" title="PLACEHOLDER — draft figure only. 85% is a common industry claim for mattress recovery, not a verified SHRED number. Replace or delete before publishing.">85%</span></div>
+        <div class="l">Average diversion from landfill, completed projects</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITY — first, because it's the evidence ================= -->
+<section class="sec" id="capability">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick">01 · Processing capability</div>
+      <h2>What goes in.<br>What comes out.</h2>
+      <p>A list of accepted materials tells you nothing about whether yours can actually be processed.
+      So here's the input, the method applied, and what comes out the other end.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+        <thead>
+          <tr><th>Material stream</th><th>Process applied</th><th>Typical output</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mat">Mattresses &amp; bedding components</td>
+            <td class="method">Dismantle → shred → separate<br>foam / spring / timber / textile</td>
+            <td>Separated steel, foam, timber fibre and textile fractions for downstream recovery</td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Pocket spring units</td>
+            <td class="method">Shred → separate steel from<br>fabric pocket wrap</td>
+            <td>Clean steel and separated textile wrap recovered as two distinct commodity streams rather than one mixed fraction <span class="tbc" title="Confirm pocket-coil separation capability before publishing.">[confirm capability]</span></td>
+            <td><span class="pill trial">Assessment</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Timber &amp; bed bases</td>
+            <td class="method">Shred → chip → size reduce<br>ferrous extraction</td>
+            <td>Graded timber chip; recovered ferrous metal from staples, springs and fixings</td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Polystyrene (EPS)</td>
+            <td class="method">Granulate → densify<br>compaction to ingot</td>
+            <td>Densified EPS suitable for onward reprocessing; volume reduced <span class="tbc" title="Industry-typical EPS densification ratio (EPS is ~98% air). Confirm against your own equipment before publishing.">up to 50:1</span></td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Plastics &amp; polymer product</td>
+            <td class="method">Shred → size reduce<br>granulate to specification</td>
+            <td>Shredded or granulated polymer to an agreed particle size for reprocessing or energy recovery</td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Concrete, brick &amp; construction material</td>
+            <td class="method">Crush → screen → grade<br>contamination removal</td>
+            <td>Graded aggregate, subject to contamination limits and end-use specification</td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Tyres</td>
+            <td class="method">Assess → shred<br>size subject to type</td>
+            <td>Tyre shred sized to downstream requirement; passenger, truck and OTR assessed separately</td>
+            <td><span class="pill trial">Assessment</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Commercial green waste</td>
+            <td class="method">Shred → chip → screen</td>
+            <td>Mulch or chip fractions from suitable commercial green-waste volumes</td>
+            <td><span class="pill live">Established</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Defective manufactured product</td>
+            <td class="method">Composition assessment →<br>destruction → separation</td>
+            <td>Evidenced destruction plus recovery of separable material fractions where viable</td>
+            <td><span class="pill trial">Trial</span></td>
+          </tr>
+          <tr>
+            <td class="mat">Unlisted &amp; mixed streams</td>
+            <td class="method">Sample → controlled trial →<br>method development</td>
+            <td>A documented processing method, or a clear answer that no viable pathway exists</td>
+            <td><span class="pill trial">Trial</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="figures">
+      <figure class="fig">
+        <figcaption>FIG. 01 — Mattress fraction split</figcaption>
+        <svg viewBox="0 0 520 250" role="img" aria-label="Diagram: a mattress is dismantled and shredded into four separated fractions"><g class="nd" style="--a:0.02;--b:0.149"><rect x="16" y="95" width="128" height="60" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="80.0" y="122.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">MATTRESS /</text><text x="80.0" y="136.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">BED BASE</text></g><path class="w" style="--a:0.088;--b:0.217" pathLength="1" d="M144 125 H 197" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.155;--b:0.284"><path d="M197 121.5 L204 125 L197 128.5 Z" fill="#111111"/></g><g class="nd" style="--a:0.223;--b:0.352"><rect x="204" y="95" width="128" height="60" fill="#111111"/><text x="268.0" y="122.0" text-anchor="middle" fill="#F2F0EA" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">DISMANTLE</text><text x="268.0" y="136.0" text-anchor="middle" fill="#F2F0EA" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">+ SHRED</text></g><path class="w" style="--a:0.291;--b:0.42" pathLength="1" d="M332 125 H 362 M362 37 V 223" fill="none" stroke="#111111" stroke-width="1.5"/><path class="w" style="--a:0.358;--b:0.487" pathLength="1" d="M362 37 H 385" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.426;--b:0.555"><path d="M385 33.5 L392 37 L385 40.5 Z" fill="#111111"/><rect x="392" y="16" width="112" height="42" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="448.0" y="41.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">STEEL</text></g><path class="w" style="--a:0.494;--b:0.623" pathLength="1" d="M362 99 H 385" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.562;--b:0.691"><path d="M385 95.5 L392 99 L385 102.5 Z" fill="#111111"/><rect x="392" y="78" width="112" height="42" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="448.0" y="103.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">FOAM</text></g><path class="w" style="--a:0.629;--b:0.758" pathLength="1" d="M362 161 H 385" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.697;--b:0.826"><path d="M385 157.5 L392 161 L385 164.5 Z" fill="#111111"/><rect x="392" y="140" width="112" height="42" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="448.0" y="165.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TIMBER FIBRE</text></g><path class="w" style="--a:0.765;--b:0.894" pathLength="1" d="M362 223 H 385" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.832;--b:0.961"><path d="M385 219.5 L392 223 L385 226.5 Z" fill="#111111"/><rect x="392" y="202" width="112" height="42" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="448.0" y="227.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TEXTILE</text></g><path class="fl" pathLength="1" d="M144 125 H 197" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M332 125 H 362 M362 37 H 385" fill="none" stroke="#00A800" stroke-width="1.5"/></svg>
+      </figure>
+      <figure class="fig">
+        <figcaption>FIG. 02 — Pocket spring separation <span class="tbc" title="Do not publish until capability confirmed.">[confirm]</span></figcaption>
+        <svg viewBox="0 0 520 250" role="img" aria-label="Diagram: a pocket spring unit is shredded and separated into clean steel and textile wrap"><g class="nd" style="--a:0.02;--b:0.206"><rect x="16" y="95" width="128" height="60" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="80.0" y="122.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">POCKET</text><text x="80.0" y="136.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SPRING UNIT</text></g><path class="w" style="--a:0.118;--b:0.304" pathLength="1" d="M144 125 H 197" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.216;--b:0.402"><path d="M197 121.5 L204 125 L197 128.5 Z" fill="#111111"/></g><g class="nd" style="--a:0.313;--b:0.499"><rect x="204" y="95" width="128" height="60" fill="#111111"/><text x="268.0" y="122.0" text-anchor="middle" fill="#F2F0EA" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SHRED +</text><text x="268.0" y="136.0" text-anchor="middle" fill="#F2F0EA" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SEPARATE</text></g><path class="w" style="--a:0.411;--b:0.597" pathLength="1" d="M332 125 H 362 M362 85 V 165" fill="none" stroke="#111111" stroke-width="1.5"/><path class="w" style="--a:0.509;--b:0.695" pathLength="1" d="M362 85 H 385" fill="none" stroke="#00A800" stroke-width="1.5"/><g class="nd" style="--a:0.607;--b:0.793"><path d="M385 81.5 L392 85 L385 88.5 Z" fill="#00A800"/><rect x="392" y="59" width="112" height="52" fill="none" stroke="#00A800" stroke-width="2"/><text x="448.0" y="82.0" text-anchor="middle" fill="#00A800" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">CLEAN STEEL</text><text x="448.0" y="96.0" text-anchor="middle" fill="#00A800" font-size="9.5" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SOLD AS SCRAP</text></g><path class="w" style="--a:0.704;--b:0.89" pathLength="1" d="M362 165 H 385" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.802;--b:0.97"><path d="M385 161.5 L392 165 L385 168.5 Z" fill="#111111"/><rect x="392" y="139" width="112" height="52" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="448.0" y="162.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TEXTILE WRAP</text><text x="448.0" y="176.0" text-anchor="middle" fill="#77726A" font-size="9.5" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">RECOVERED</text></g><path class="fl" pathLength="1" d="M144 125 H 197" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M332 125 H 362 M362 85 H 385" fill="none" stroke="#00A800" stroke-width="1.5"/></svg>
+      </figure>
+      <figure class="fig figwide">
+        <figcaption>FIG. 03 — Contract processing line</figcaption>
+        <svg viewBox="0 0 1080 200" role="img" aria-label="Diagram of a contract processing line from receipt to recovered fractions, residual disposal and downstream buyers"><g class="nd" style="--a:0.02;--b:0.139"><rect x="16" y="60" width="132" height="56" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="82.0" y="85.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">MATERIAL</text><text x="82.0" y="99.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">RECEIVED</text></g><path class="w" style="--a:0.083;--b:0.202" pathLength="1" d="M148 88 H 203" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.146;--b:0.265"><path d="M203 84.5 L210 88 L203 91.5 Z" fill="#111111"/><rect x="210" y="60" width="132" height="56" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="276.0" y="85.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">PRE-SORT /</text><text x="276.0" y="99.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">PREPARE</text></g><path class="w" style="--a:0.209;--b:0.328" pathLength="1" d="M342 88 H 397" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.271;--b:0.39"><path d="M397 84.5 L404 88 L397 91.5 Z" fill="#111111"/><rect x="404" y="60" width="112" height="56" fill="#111111"/><text x="460.0" y="92.0" text-anchor="middle" fill="#F2F0EA" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SHRED</text></g><path class="w" style="--a:0.334;--b:0.453" pathLength="1" d="M516 88 H 571" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.397;--b:0.516"><path d="M571 84.5 L578 88 L571 91.5 Z" fill="#111111"/><rect x="578" y="60" width="132" height="56" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="644.0" y="85.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SEPARATE /</text><text x="644.0" y="99.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SCREEN</text></g><path class="w" style="--a:0.46;--b:0.579" pathLength="1" d="M710 88 H 744 M744 55 V 145" fill="none" stroke="#111111" stroke-width="1.5"/><path class="w" style="--a:0.523;--b:0.642" pathLength="1" d="M744 55 H 769" fill="none" stroke="#00A800" stroke-width="1.5"/><g class="nd" style="--a:0.586;--b:0.705"><path d="M769 51.5 L776 55 L769 58.5 Z" fill="#00A800"/><rect x="776" y="33" width="150" height="44" fill="none" stroke="#00A800" stroke-width="2"/><text x="851" y="51" text-anchor="middle" fill="#00A800" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">RECOVERED</text><text x="851" y="65" text-anchor="middle" fill="#00A800" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">FRACTIONS</text></g><path class="w" style="--a:0.649;--b:0.768" pathLength="1" d="M744 145 H 769" fill="none" stroke="#111111" stroke-width="1.5"/><g class="nd" style="--a:0.711;--b:0.83"><path d="M769 141.5 L776 145 L769 148.5 Z" fill="#111111"/><rect x="776" y="123" width="150" height="44" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="851" y="141" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">RESIDUAL TO</text><text x="851" y="155" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">DISPOSAL</text></g><path class="w" style="--a:0.774;--b:0.893" pathLength="1" d="M926 55 H 971" fill="none" stroke="#00A800" stroke-width="1.5"/><g class="nd" style="--a:0.837;--b:0.956"><path d="M971 51.5 L978 55 L971 58.5 Z" fill="#00A800"/><rect x="978" y="33" width="86" height="44" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/><text x="1021.0" y="59.0" text-anchor="middle" fill="#111111" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">BUYERS</text></g><path class="fl" pathLength="1" d="M148 88 H 203" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M342 88 H 397" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M516 88 H 571" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M710 88 H 744 M744 55 H 769" fill="none" stroke="#00A800" stroke-width="1.5"/><path class="fl" pathLength="1" d="M926 55 H 971" fill="none" stroke="#00A800" stroke-width="1.5"/><path d="M16 184 H 1064" fill="none" stroke="#8B877E" stroke-width="1" stroke-dasharray="3 6"/><rect x="79.5" y="181.5" width="5" height="5" fill="#8B877E"/><rect x="273.5" y="181.5" width="5" height="5" fill="#8B877E"/><rect x="457.5" y="181.5" width="5" height="5" fill="#8B877E"/><rect x="641.5" y="181.5" width="5" height="5" fill="#8B877E"/><rect x="848.5" y="181.5" width="5" height="5" fill="#8B877E"/><text x="540" y="172" text-anchor="middle" fill="#8B877E" font-size="9.5" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">WEIGHED, RECORDED AND REPORTED AT EVERY STAGE</text></svg>
+      </figure>
+    </div>
+
+    <p class="tnote">SHRED does not accept asbestos or hazardous waste. Material specifications, contamination limits
+    and downstream pathways are confirmed per project before acceptance. <a href="#submit" style="color:var(--ink);font-weight:600">My material isn't listed →</a></p>
+  </div>
+</section>
+
+<!-- ================= THE GAP ================= -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick">02 · The gap</div>
+      <h2>The material<br>nobody quotes.</h2>
+      <p>Waste contractors are set up for predictable streams. Clean cardboard. Sorted plastics. General waste.
+      The moment a material is <span class="hl">bonded, oversized, contaminated or carrying your brand</span>,
+      it falls outside the service. It gets quoted as landfill, or it doesn't get quoted at all.</p>
+    </div>
+    <div class="risk">
+      <article>
+        <span class="num">RISK 01</span>
+        <h3>Brand exposure</h3>
+        <p>Product that reaches a landfill floor intact can be pulled off it, resold, or photographed with your
+        logo still on it.</p>
+      </article>
+      <article>
+        <span class="num">RISK 02</span>
+        <h3>Warehouse drag</h3>
+        <p>Rejected stock ties up racking, floor space and forklift hours for months while someone works out what
+        to do with it. That someone has a day job.</p>
+      </article>
+      <article>
+        <span class="num">RISK 03</span>
+        <h3>Reporting gaps</h3>
+        <p>Landfill disposal produces no recovery data. If you report on diversion, packaging obligations or
+        Scope 3, unprocessed material is a hole in the numbers.</p>
+      </article>
+      <article>
+        <span class="num">RISK 04</span>
+        <h3>Escalating cost</h3>
+        <p>Landfill levies go up every year, and mixed waste pays the highest gate rate in the schedule.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUSTODY — the one dark band ================= -->
+<section class="custody" id="custody">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick" style="color:#fff">03 · Chain of custody</div>
+      <h2>Gone, and provable.</h2>
+      <p>With recalled, branded or defective product, the real risk is the product turning up again. The disposal
+      cost is a footnote. SHRED runs these projects as a controlled chain, and what you get back is a documented
+      outcome, not a weighbridge docket.</p>
+    </div>
+    <div class="wedge">
+      <div class="l">
+        <h3>The controlled chain</h3>
+        <ul class="chain">
+          <li><b>Sealed collection</b>Material is loaded, secured and manifested at your site with item counts recorded against the agreed scope.</li>
+          <li><b>Direct to processing</b>Consignments are directed to the nominated processing site without intermediate handling or resale exposure.</li>
+          <li><b>Irreversible size reduction</b>Product is shredded or granulated to a state where the item cannot be reconstituted, identified or resold.</li>
+          <li><b>Documented outcome</b>You receive processing records covering quantity, method and destination for each consignment.</li>
+        </ul>
+      </div>
+      <div class="r">
+        <h3>What you receive</h3>
+        <p style="margin-bottom:22px">Reporting is agreed at scoping stage and issued on completion. Available outputs include:</p>
+        <div style="margin-bottom:28px">
+          <span class="dpill">Consignment manifest</span><span class="dpill">Weighbridge records</span>
+          <span class="dpill">Processing method statement</span>
+          <span class="dpill">Certificate of destruction <span class="tbc" title="Confirm SHRED can issue certificates of destruction.">[confirm]</span></span>
+          <span class="dpill">Diversion &amp; recovery summary</span><span class="dpill">Downstream destination record</span>
+          <span class="dpill">Witnessed destruction <span class="tbc" title="Confirm witnessed/video destruction can be offered.">[confirm]</span></span>
+        </div>
+        <h3 style="margin-bottom:12px">Why it matters</h3>
+        <p>Your quality, legal and sustainability people all want the same thing:
+        <span class="hl">proof of what happened to it.</span> A weighbridge docket doesn't give them that.
+        Processing records do.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick">04 · How it works</div>
+      <h2>Assess. Trial. Scope.<br>Process. Report.</h2>
+      <p>You don't need a finished brief. A few photographs, a rough quantity and the outcome you're after are
+      enough for us to tell you whether this is worth pursuing.</p>
+    </div>
+    <div class="proc">
+      <article>
+        <div class="step">STEP 01</div>
+        <h3>Show us the material</h3>
+        <p>Photographs, specifications, dimensions, approximate quantity, location and the outcome you need.</p>
+        <div class="time">You: 10 minutes</div>
+      </article>
+      <article>
+        <div class="step">STEP 02</div>
+        <h3>We assess it</h3>
+        <p>Composition, contamination, handling requirements, processing options and realistic downstream pathways.</p>
+        <div class="time">Us: <span class="tbc" title="PROPOSED, not confirmed: 2 business days. Confirm internally.">2 business days</span></div>
+      </article>
+      <article>
+        <div class="step">STEP 03</div>
+        <h3>Trial or scope</h3>
+        <p>Where the material warrants it, a controlled trial. Where it doesn't, a direct scope: method, logistics, cost, outputs and reporting.</p>
+        <div class="time">Us: <span class="tbc" title="PROPOSED, not confirmed: 2–6 weeks depending on material and trial complexity. Confirm internally.">2–6 weeks</span></div>
+      </article>
+      <article>
+        <div class="step">STEP 04</div>
+        <h3>We process</h3>
+        <p>Material is processed to the agreed method and directed to the agreed recovery or disposal pathway.</p>
+        <div class="time">Per agreed schedule</div>
+      </article>
+      <article>
+        <div class="step">STEP 05</div>
+        <h3>We report</h3>
+        <p>Quantities, method, recovery outcome and destination, in a form your reporting can actually use.</p>
+        <div class="time">On completion / monthly</div>
+      </article>
+    </div>
+    <p class="tnote">Submitting material for assessment does not confirm acceptance or guarantee a recovery outcome.
+    Where no viable pathway exists, we will tell you that directly rather than take the material anyway.</p>
+  </div>
+</section>
+
+<!-- ================= WHO + CASES ================= -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div class="kick">05 · Who calls us</div>
+      <h2>The calls we get.</h2>
+    </div>
+    <div class="who">
+      <article>
+        <div class="role">Manufacturing &amp; Operations</div>
+        <h3>Recurring production waste</h3>
+        <p>Offcuts, rejected components and by-products generated on the same line every week. You need a
+        repeatable, costed program, not a skip and a phone call.</p>
+      </article>
+      <article>
+        <div class="role">Supply Chain &amp; Quality</div>
+        <h3>Defective &amp; recalled product</h3>
+        <p>Stock that cannot be sold, returned or reworked. You need it destroyed properly, evidenced, and off
+        your balance sheet without becoming a brand incident.</p>
+      </article>
+      <article>
+        <div class="role">Retail &amp; Distribution</div>
+        <h3>Obsolete and damaged stock</h3>
+        <p>Discontinued lines, damaged returns and end-of-range inventory that must be permanently removed from
+        circulation rather than quietly leaking into secondary markets.</p>
+      </article>
+      <article>
+        <div class="role">Sustainability &amp; ESG</div>
+        <h3>Diversion you can evidence</h3>
+        <p>You need recovery outcomes you can put in a report and defend: tonnages, destinations and processing
+        method, not a generic "recycled responsibly" claim.</p>
+      </article>
+      <article>
+        <div class="role">Waste &amp; Recycling Operators</div>
+        <h3>Streams you can't process</h3>
+        <p>Material that arrives at your facility outside your equipment's capability. SHRED works as processing
+        capacity behind you rather than in competition with you.</p>
+      </article>
+      <article>
+        <div class="role">Facilities &amp; Site Management</div>
+        <h3>Accumulated legacy material</h3>
+        <p>Years of stored material across a yard, warehouse or decommissioned site that has to be cleared, sorted
+        and processed as a defined project.</p>
+      </article>
+    </div>
+
+    <div class="cases" style="margin-top:22px">
+      <div class="case">
+        <div class="top">Bedding manufacturer</div>
+        <div class="body">
+          <p class="q">"We generate rejected pocket springs and foam offcuts every week and it's all going to landfill."</p>
+          <p class="a">SHRED assesses whether the springs can be separated from their fabric wrap at volume, so the steel and the
+          textile leave as two saleable streams instead of one mixed load. Where that works, it becomes a
+          <strong>recurring, costed processing program</strong> with monthly recovery reporting.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="top">Manufacturer — defective product</div>
+        <div class="body">
+          <p class="q">"We have multiple pallets of product that failed QA and cannot be sold or reworked."</p>
+          <p class="a">SHRED assesses the product's construction and develops a
+          <strong>destruction and separation plan</strong> that renders the item unusable, recovers what can be
+          recovered, and documents the outcome for your quality and legal teams.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="top">Retailer / distributor</div>
+        <div class="body">
+          <p class="q">"This range is discontinued. It cannot end up on a marketplace with our logo on it."</p>
+          <p class="a">SHRED runs the project under a <strong>controlled chain of custody</strong>, with
+          irreversible size reduction and consignment-level records, so removal from circulation is evidenced,
+          not assumed.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="top">Industrial site</div>
+        <div class="body">
+          <p class="q">"We've accumulated years of mixed material across the yard and no one will quote it."</p>
+          <p class="a">SHRED assesses the site material as a <strong>defined clearance and processing project</strong>:
+          sorting, size reduction, logistics and recovery pathways scoped and priced before work begins.</p>
+        </div>
+      </div>
+    </div>
+    <p class="tnote">Illustrative applications. Every project is assessed individually.</p>
+  </div>
+</section>
+
+<!-- ================= GROUP ================= -->
+<section class="sec" style="padding-top:0" id="group">
+  <div class="wrap">
+    <div class="group">
+      <div class="kick">06 · Backed by Recycle Group</div>
+      <div class="grouprow">
+        <div>
+          <h2 style="margin-bottom:20px">Anyone can buy<br>a shredder.</h2>
+          <p>What's hard is knowing where the material goes once it comes out the other side. That's where most
+          difficult-material projects fall over.</p>
+          <p style="margin-top:16px">SHRED is Recycle Group's specialist brand for customised commercial shredding
+          and material processing. It draws on the group's shredding, granulation, crushing and size-reduction
+          capability, and on established downstream relationships for the fractions that come out.</p>
+        </div>
+        <div>
+          <ul class="glist">
+            <li><b>Method, not just machinery</b>Preparation, processing and post-processing designed as one pathway.</li>
+            <li><b>Downstream that already exists</b>Recovered fractions directed to established outlets rather than stockpiled.</li>
+            <li><b>Operational scale</b>Capacity to take on recurring contract volume, not only one-off batches.</li>
+            <li><b>A straight answer</b>If your material has no viable pathway, we say so at assessment stage.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="submit">
+  <div class="wrap ctagrid">
+    <div>
+      <div class="kick">07 · Submit your material</div>
+      <h2>What are you<br>stuck with?</h2>
+      <p style="margin-top:20px">You don't need a finished project brief. Tell us what the material is, roughly how
+      much there is, where it sits and what outcome matters to you.</p>
+      <p style="margin-top:14px"><span class="hl">Photographs are the fastest place to start.</span> A clear photo
+      of the material and one of the storage area usually tells us more than a page of description.</p>
+      <div class="quote-rail">
+        <p>We assess every submission before acceptance. If there's no technically or commercially viable pathway,
+        we'll tell you at assessment stage, and where possible point you at who can help.</p>
+      </div>
+      <div style="margin-top:30px" class="fine">
+        DIRECT ENQUIRIES<br>
+        <span class="tbc" title="Insert SHRED phone number.">[PHONE]</span> ·
+        <span class="tbc" title="Insert SHRED enquiry email.">[EMAIL]</span>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Submission received';">
+      <div class="f2">
+        <div class="f"><label for="n">Name</label><input id="n" type="text" required></div>
+        <div class="f"><label for="c">Company</label><input id="c" type="text" required></div>
+      </div>
+      <div class="f2">
+        <div class="f"><label for="e">Email</label><input id="e" type="email" required></div>
+        <div class="f"><label for="p">Phone</label><input id="p" type="tel"></div>
+      </div>
+      <div class="f">
+        <label for="t">Material type</label>
+        <select id="t">
+          <option>Defective or recalled product</option>
+          <option>Recurring manufacturing waste / offcuts</option>
+          <option>Obsolete or damaged stock</option>
+          <option>Mattresses &amp; bedding components</option>
+          <option>Pocket spring units</option>
+          <option>Timber / bed bases</option>
+          <option>Polystyrene (EPS)</option>
+          <option>Plastics / polymer product</option>
+          <option>Concrete / brick / construction material</option>
+          <option>Tyres</option>
+          <option>Commercial green waste</option>
+          <option>Something not listed</option>
+        </select>
+      </div>
+      <div class="f2">
+        <div class="f">
+          <label for="v">Approximate volume</label>
+          <select id="v">
+            <option>Under 5 tonnes / one-off</option>
+            <option>5–50 tonnes</option>
+            <option>50–500 tonnes</option>
+            <option>500+ tonnes</option>
+            <option>Recurring — weekly or monthly</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="f"><label for="l">Location</label><input id="l" type="text" placeholder="Suburb &amp; state"></div>
+      </div>
+      <div class="f">
+        <label for="o">What outcome matters most?</label>
+        <textarea id="o" placeholder="e.g. evidenced destruction, maximum diversion from landfill, lowest cost, site cleared by a fixed date, recurring program"></textarea>
+      </div>
+      <div class="f"><label for="ph">Photographs</label><input id="ph" type="file" multiple></div>
+      <button type="submit" class="btn btn-ink">Submit for assessment →</button>
+      <div class="fnote">Assessment response within <span class="tbc" title="PROPOSED, not confirmed: 2 business days. Confirm internally.">2 business days</span>.
+      Submission does not confirm material acceptance.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap frow">
+    <div>
+      <span class="logo" style="font-size:1.2rem">SHR<span style="color:var(--green)">E</span>D</span>
+      <div class="fine" style="margin-top:10px">Industrial shredding &amp; material processing<br>A Recycle Group brand</div>
+    </div>
+    <div class="fine">
+      SHRED does not accept asbestos or hazardous waste. All material is assessed before acceptance. Submitting an
+      enquiry does not confirm acceptance or guarantee a recovery outcome. Processing methods, outputs and
+      downstream pathways are confirmed per project and are subject to what is safe, lawful, technically practical
+      and commercially viable for the material.<br>
+      © <span id="y"></span> Recycle Group. <span class="tbc" title="Insert ABN and EPA licence references.">[ABN / EPA licence details]</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){
+  var els=document.querySelectorAll('.head,.risk article,.who article,.proc article,.case,.wedge,.group,.tablewrap,.fig,.figs div,.ctagrid>*');
+  els.forEach(function(e){e.classList.add('rv')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},
+  {rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script>
+(function(){
+  var figs=[].slice.call(document.querySelectorAll('.fig'));
+  if(!figs.length)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){figs.forEach(function(f){f.style.setProperty('--p',1)});return}
+  var ticking=false;
+  function upd(){
+    ticking=false;
+    var vh=innerHeight;
+    figs.forEach(function(f){
+      var r=f.getBoundingClientRect();
+      if(r.bottom<-60||r.top>vh+60)return;
+      var p=(vh-r.top)/(r.height+vh*0.42);
+      p=Math.max(0,Math.min(1,p));
+      f.style.setProperty('--p',p.toFixed(3));
+    });
+  }
+  function onS(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
+  addEventListener('scroll',onS,{passive:true});
+  addEventListener('resize',onS,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
