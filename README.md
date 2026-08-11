@@ -11,12 +11,13 @@ shredding and material-processing projects.
 - `machine-explode-pilot.webm` — the source hero video (also embedded in index.html;
   kept here so it can be swapped or re-encoded without unpacking the base64).
 
-## Status — NOT ready to publish
+## Status — live draft
 
-Draft figures are marked in the pages with green dotted underlines (`class="tbc"`,
-hover for details). Before this goes live:
+The site is live at rdodeployme.github.io/shred-onepager. Proposed/sourced figures are marked
+with green dotted underlines (`class="tbc"`, hover for details). Outstanding before this is final:
 
-- Replace or delete the **12,400 t annual tonnage** and **85% diversion** stats — placeholders, not verified.
+- Add verified annual tonnage and diversion stats when available (deliberately omitted for now —
+  do not add unverified environmental figures to the public page).
 - Confirm the 5 processing sites can run SHRED projects (list sourced from TMRC public site list).
 - Confirm the 2-business-day assessment SLA and 2–6 week trial window internally.
 - Add phone, email, ABN and EPA licence details.
