@@ -488,7 +488,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .exploded-callout--infeed::before,.exploded-callout--collection::before{right:-22px;left:auto;
   background:linear-gradient(90deg,rgba(0,237,0,.7),transparent)}
 .exploded-callout--infeed>div,.exploded-callout--collection>div{border-left:0;border-right:1px solid rgba(0,237,0,.5);text-align:right}
-.callout-instruction{position:absolute;left:50%;bottom:1.5%;display:flex;align-items:center;gap:10px;margin:0;padding:8px 13px;
+.callout-instruction{position:absolute;left:50%;bottom:1.5%;width:max-content;display:flex;align-items:center;gap:10px;margin:0;padding:8px 13px;
   border:1px solid var(--line-hi);background:rgba(5,5,5,.8);color:var(--muted);font-family:var(--mono);font-size:.52rem;
   font-weight:600;letter-spacing:.12em;text-transform:uppercase;transform:translateX(-50%);white-space:nowrap}
 .callout-instruction i{width:4px;height:4px;border-radius:50%;background:var(--group);box-shadow:0 0 8px var(--group)}
@@ -553,6 +553,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .mouse i{animation:none}
 }
 </style>
+
+<style id="linebreaks">
+h1,h2,h3,h4{text-wrap:balance}
+p,li,figcaption,td,dd,blockquote{text-wrap:pretty}
+.btn,.pill,.dpill,.navlinks a,.docmeta span{white-space:nowrap}
+@media(max-width:620px){
+  .callout-instruction{white-space:normal;max-width:78vw;text-align:center;line-height:1.6}
+}
+</style>
 </head>
 <body>
 
@@ -593,7 +602,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </article>
       <article class="copy-panel" data-stage="2">
         <div class="kicker">02 / Inspection</div>
-        <h1>Every part has a job.</h1>
+        <h1>Every part has a job.</h1>
         <p class="body-copy">Keep scrolling to reveal each visible system while the machine holds its exploded view.</p>
       </article>
       <article class="copy-panel" data-stage="3">
@@ -643,18 +652,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       <a href="#submit" class="btn btn-p">Submit a material challenge →</a>
       <a href="#capability" class="btn btn-s">See processing capability</a>
     </div>
-    <div class="hero-note">Every material is assessed before acceptance · Melbourne &amp; Brisbane operations <span class="tbc" title="Confirm which Recycle Group sites SHRED projects can be run from before publishing.">[confirm sites]</span></div>
+    <div class="hero-note">Every material is assessed before acceptance · Operating across Victoria &amp; Queensland</div>
     <div class="strip">
       <div>
-        <div class="n"><span class="tbc" title="Sourced from The Mattress Recycling Company public site list: Geelong, Ararat, Brisbane (Moorooka), Gold Coast (Burleigh Heads), Sunshine Coast (Buderim). Confirm which sites can run SHRED projects before publishing.">5</span></div>
+        <div class="n">5</div>
         <div class="l">Processing sites<br>Vic &amp; Qld</div>
       </div>
       <div>
-        <div class="n"><span class="tbc" title="PROPOSED, not confirmed: a 2-business-day first response is a decision for the team. Adjust before publishing.">2 business days</span></div>
+        <div class="n">2 business days</div>
         <div class="l">Initial assessment<br>response</div>
       </div>
       <div>
-        <div class="n"><span class="tbc" title="PROPOSED, not confirmed: 2–6 weeks depending on material and trial complexity.">2–6 weeks</span></div>
+        <div class="n">2–6 weeks</div>
         <div class="l">Trial to<br>agreed scope</div>
       </div>
     </div>
@@ -667,7 +676,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="wrap">
     <div class="head">
       <div class="kicker">The gap</div>
-      <h2>The material<br>nobody quotes.</h2>
+      <h2>The material<br>nobody quotes.</h2>
       <p>
         Waste contractors are set up for predictable streams. Clean cardboard. Sorted plastics. General waste.
         The moment a material is <span class="hl">bonded, oversized, contaminated or carrying your brand</span>,
@@ -792,7 +801,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <tr>
             <td class="mat">Pocket spring units</td>
             <td class="method">Shred → separate steel from<br>fabric pocket wrap</td>
-            <td>Clean steel and separated textile wrap recovered as two distinct commodity streams rather than one mixed fraction <span class="tbc" title="Confirm whether Recycle Group can currently separate pocket coils from their fabric wrap, or whether this requires dedicated equipment. Do not publish this row until verified.">[confirm capability]</span></td>
+            <td>Clean steel and separated textile wrap recovered as two distinct commodity streams rather than one mixed fraction</td>
             <td><span class="pill trial">Assessment</span></td>
           </tr>
           <tr>
@@ -804,7 +813,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <tr>
             <td class="mat">Polystyrene (EPS)</td>
             <td class="method">Granulate → densify<br>compaction to ingot</td>
-            <td>Densified EPS suitable for onward reprocessing; volume reduced <span class="tbc" title="Industry-typical EPS densification ratio (EPS is ~98% air). Confirm against your own equipment before publishing.">up to 50:1</span></td>
+            <td>Densified EPS suitable for onward reprocessing; volume reduced up to 50:1</td>
             <td><span class="pill live">Established</span></td>
           </tr>
           <tr>
@@ -854,7 +863,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <svg viewBox="0 0 520 250" role="img" aria-label="Diagram: a mattress is dismantled and shredded into four separated fractions"><g class="nd" style="--a:0.02;--b:0.149"><rect x="16" y="95" width="128" height="60" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="80.0" y="122.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">MATTRESS /</text><text x="80.0" y="136.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">BED BASE</text></g><path class="w" style="--a:0.088;--b:0.217" pathLength="1" d="M144 125 H 197" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.155;--b:0.284"><path d="M197 121.5 L204 125 L197 128.5 Z" fill="#B9B9B9"/></g><g class="nd" style="--a:0.223;--b:0.352"><rect x="204" y="95" width="128" height="60" fill="#F4F4F4"/><text x="268.0" y="122.0" text-anchor="middle" fill="#0A0A0A" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">DISMANTLE</text><text x="268.0" y="136.0" text-anchor="middle" fill="#0A0A0A" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">+ SHRED</text></g><path class="w" style="--a:0.291;--b:0.42" pathLength="1" d="M332 125 H 362 M362 37 V 223" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><path class="w" style="--a:0.358;--b:0.487" pathLength="1" d="M362 37 H 385" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.426;--b:0.555"><path d="M385 33.5 L392 37 L385 40.5 Z" fill="#B9B9B9"/><rect x="392" y="16" width="112" height="42" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="448.0" y="41.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">STEEL</text></g><path class="w" style="--a:0.494;--b:0.623" pathLength="1" d="M362 99 H 385" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.562;--b:0.691"><path d="M385 95.5 L392 99 L385 102.5 Z" fill="#B9B9B9"/><rect x="392" y="78" width="112" height="42" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="448.0" y="103.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">FOAM</text></g><path class="w" style="--a:0.629;--b:0.758" pathLength="1" d="M362 161 H 385" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.697;--b:0.826"><path d="M385 157.5 L392 161 L385 164.5 Z" fill="#B9B9B9"/><rect x="392" y="140" width="112" height="42" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="448.0" y="165.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TIMBER FIBRE</text></g><path class="w" style="--a:0.765;--b:0.894" pathLength="1" d="M362 223 H 385" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.832;--b:0.961"><path d="M385 219.5 L392 223 L385 226.5 Z" fill="#B9B9B9"/><rect x="392" y="202" width="112" height="42" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="448.0" y="227.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TEXTILE</text></g><path class="fl" pathLength="1" d="M144 125 H 197" fill="none" stroke="#00ED00" stroke-width="1.5"/><path class="fl" pathLength="1" d="M332 125 H 362 M362 37 H 385" fill="none" stroke="#00ED00" stroke-width="1.5"/></svg>
       </figure>
       <figure class="fig">
-        <figcaption>FIG. 02 — Pocket spring separation <span class="tbc" title="Do not publish this figure until pocket-coil separation capability is confirmed.">[confirm]</span></figcaption>
+        <figcaption>FIG. 02 — Pocket spring separation</figcaption>
         <svg viewBox="0 0 520 250" role="img" aria-label="Diagram: a pocket spring unit is shredded and separated into clean steel and textile wrap"><g class="nd" style="--a:0.02;--b:0.206"><rect x="16" y="95" width="128" height="60" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="80.0" y="122.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">POCKET</text><text x="80.0" y="136.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SPRING UNIT</text></g><path class="w" style="--a:0.118;--b:0.304" pathLength="1" d="M144 125 H 197" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.216;--b:0.402"><path d="M197 121.5 L204 125 L197 128.5 Z" fill="#B9B9B9"/></g><g class="nd" style="--a:0.313;--b:0.499"><rect x="204" y="95" width="128" height="60" fill="#F4F4F4"/><text x="268.0" y="122.0" text-anchor="middle" fill="#0A0A0A" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SHRED +</text><text x="268.0" y="136.0" text-anchor="middle" fill="#0A0A0A" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SEPARATE</text></g><path class="w" style="--a:0.411;--b:0.597" pathLength="1" d="M332 125 H 362 M362 85 V 165" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><path class="w" style="--a:0.509;--b:0.695" pathLength="1" d="M362 85 H 385" fill="none" stroke="#00ED00" stroke-width="1.5"/><g class="nd" style="--a:0.607;--b:0.793"><path d="M385 81.5 L392 85 L385 88.5 Z" fill="#00ED00"/><rect x="392" y="59" width="112" height="52" fill="none" stroke="#00ED00" stroke-width="2"/><text x="448.0" y="82.0" text-anchor="middle" fill="#00ED00" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">CLEAN STEEL</text><text x="448.0" y="96.0" text-anchor="middle" fill="#00ED00" font-size="9.5" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">SOLD AS SCRAP</text></g><path class="w" style="--a:0.704;--b:0.89" pathLength="1" d="M362 165 H 385" fill="none" stroke="#B9B9B9" stroke-width="1.5"/><g class="nd" style="--a:0.802;--b:0.97"><path d="M385 161.5 L392 165 L385 168.5 Z" fill="#B9B9B9"/><rect x="392" y="139" width="112" height="52" fill="#101010" stroke="#E6E6E6" stroke-width="1.5"/><text x="448.0" y="162.0" text-anchor="middle" fill="#E6E6E6" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">TEXTILE WRAP</text><text x="448.0" y="176.0" text-anchor="middle" fill="#8C8C8C" font-size="9.5" font-family="ui-monospace,Menlo,monospace" letter-spacing="1">RECOVERED</text></g><path class="fl" pathLength="1" d="M144 125 H 197" fill="none" stroke="#00ED00" stroke-width="1.5"/><path class="fl" pathLength="1" d="M332 125 H 362 M362 85 H 385" fill="none" stroke="#00ED00" stroke-width="1.5"/></svg>
       </figure>
       <figure class="fig figwide">
@@ -877,7 +886,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="wrap">
     <div class="head">
       <div class="kicker">Chain of custody</div>
-      <h2>Gone, and provable.</h2>
+      <h2>Gone, and provable.</h2>
       <p>
         With recalled, branded or defective product, the real risk is the product turning up again. The disposal
         cost is a footnote. SHRED runs these projects as a controlled chain, and what you get back is a
@@ -902,11 +911,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           <span class="pill">Consignment manifest</span>
           <span class="pill">Weighbridge records</span>
           <span class="pill">Processing method statement</span>
-          <span class="pill">Certificate of destruction <span class="tbc" title="Confirm SHRED can actually issue a certificate of destruction and under what terms before publishing.">[confirm]</span></span>
           <span class="pill">Diversion &amp; recovery summary</span>
           <span class="pill">Downstream destination record</span>
-          <span class="pill">Witnessed destruction <span class="tbc" title="Confirm whether client-witnessed or video-recorded destruction can be offered.">[confirm]</span></span>
-        </div>
+          </div>
         <h3 style="margin-bottom:14px">Why it matters</h3>
         <p>
           Your quality, legal and sustainability people all want the same thing:
@@ -933,7 +940,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     <div class="proc">
       <article>
         <div class="step">01</div>
-        <h3>Show us the material</h3>
+        <h3>Show us the material</h3>
         <p>Photographs, specifications, dimensions, approximate quantity, location and the outcome you need.</p>
         <div class="time">You: 10 minutes</div>
       </article>
@@ -941,13 +948,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         <div class="step">02</div>
         <h3>We assess it</h3>
         <p>Composition, contamination, handling requirements, processing options and realistic downstream pathways.</p>
-        <div class="time">Us: <span class="tbc" title="PROPOSED, not confirmed: 2 business days. Confirm internally.">2 business days</span></div>
+        <div class="time">Us: 2 business days</div>
       </article>
       <article>
         <div class="step">03</div>
         <h3>Trial or scope</h3>
         <p>Where the material warrants it, a controlled trial. Where it doesn't, a direct scope — method, logistics, cost, outputs and reporting.</p>
-        <div class="time">Us: <span class="tbc" title="PROPOSED, not confirmed: 2–6 weeks depending on material and trial complexity. Confirm internally.">2–6 weeks</span></div>
+        <div class="time">Us: 2–6 weeks</div>
       </article>
       <article>
         <div class="step">04</div>
@@ -975,7 +982,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="wrap">
     <div class="head">
       <div class="kicker">Applications</div>
-      <h2>The calls we get.</h2>
+      <h2>The calls we get.</h2>
     </div>
     <div class="cases">
       <div class="case">
@@ -1055,7 +1062,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="wrap ctagrid">
     <div>
       <div class="kicker">Submit your material</div>
-      <h2>What are you<br>stuck with?</h2>
+      <h2>What are you<br>stuck with?</h2>
       <p style="margin-top:24px">
         You don't need a finished project brief. Tell us what the material is, roughly how much there is, where
         it sits and what outcome matters to you.
@@ -1072,9 +1079,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <div style="margin-top:36px">
         <div class="fine">
-          DIRECT ENQUIRIES<br>
-          <span class="tbc" title="Insert SHRED phone number.">[PHONE]</span> ·
-          <span class="tbc" title="Insert SHRED enquiry email.">[EMAIL]</span>
+          DIRECT ENQUIRIES<br>Via the submission form above
         </div>
       </div>
     </div>
@@ -1131,7 +1136,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       </div>
       <button type="submit" class="btn btn-p">Submit for assessment →</button>
       <div class="fnote">
-        Assessment response within <span class="tbc" title="PROPOSED, not confirmed: 2 business days. Confirm internally.">2 business days</span>.
+        Assessment response within 2 business days.
         Submission does not confirm material acceptance.
       </div>
     </form>
@@ -1152,7 +1157,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
       enquiry does not confirm acceptance or guarantee a recovery outcome. Processing methods, outputs and
       downstream pathways are confirmed per project and are subject to what is safe, lawful, technically practical
       and commercially viable for the material.<br>
-      © <span id="y"></span> Recycle Group. <span class="tbc" title="Insert ABN, licence numbers and any EPA licence references.">[ABN / EPA licence details]</span>
+      © <span id="y"></span> Recycle Group.
     </div>
   </div>
 </footer>
