@@ -1,0 +1,4 @@
+:HL["/shred-onepager/v3/_next/static/chunks/4057zkae_t4x_.css","style"]
+:HC["/",""]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"iEuF39qSqcrP7qGbNo_pp","t":{"t":{"s":"","h":80,"c":"$Q1"}}}

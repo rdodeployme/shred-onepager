@@ -11,6 +11,14 @@ shredding and material-processing projects.
 - `machine-explode-pilot.webm` — the source hero video (also embedded in index.html;
   kept here so it can be swapped or re-encoded without unpacking the base64).
 
+## v3 — Next.js + real-time 3D (`/v3/`)
+
+- `v3/` — static export, live at rdodeployme.github.io/shred-onepager/v3/. Leaves `index.html` and `v2.html` untouched.
+- `v3-source/` — the Next.js source. `npm install`, then `NEXT_PUBLIC_BASE_PATH=/shred-onepager/v3 npx next build` and copy `out/` to `v3/`.
+- `v3-source/blender/build_line.py` — procedural Blender (bpy) model of the shredding line; exports `public/model/shred-line.glb` and the Cycles stills.
+- The 3D line is an illustrative model, badged as such on the page. Accent colour is one CSS variable (`--accent` in `app/globals.css`).
+- New in v3 and needing confirmation: the "Mixed metal streams" capability row (eddy current separation, paid separation service).
+
 ## Status — live draft
 
 The site is live at rdodeployme.github.io/shred-onepager. Proposed/sourced figures are marked
